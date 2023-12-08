@@ -13,7 +13,11 @@ const styles = StyleSheet.create({
   datePickerContainer:{
     margin: 20,
     alignItems: "center",   
-  }
+  },
+  lifeCardContainer: {
+    margin: 20,
+    alignItems: "center",
+  },
 });
 
 export default styles;
