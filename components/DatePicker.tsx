@@ -10,29 +10,29 @@ import {
 import DateTimePicker from "@react-native-community/datetimepicker";
 import styles from "../styles/styles";
 
-export default function DatePicker() {
-  const [showDatePicker, setShowDatePicker] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+interface DatePickerProps {
+  selectedDate: Date | null;
+  setSelectedDate: React.Dispatch<React.SetStateAction<Date | null>>;
+  day: number | null;
+  month: number | null;
+  year: number | null;
+}
 
+export default function DatePicker({selectedDate, setSelectedDate, day, month, year}: DatePickerProps) {
+  const [showDatePicker, setShowDatePicker] = useState(false);  
+
+// to show the date picker only when called 
   const showPicker = () => {
     setShowDatePicker(true);
   };
 
+//set the selected date to the chosen from picker  
   const onDateChange = (event: Event, date?: Date) => {
     setShowDatePicker(false);
     if (date) {
       setSelectedDate(date);
     }
-  };
-
-  const [day, month, year] = (
-    selectedDate?.toLocaleDateString("de-DE") || ""
-  ).split(".");
-
-   //console.log("The year is " + year)
-  //console.log("The day is " + day)
-  // console.log("The month is " + month)
- // console.log(day+month)
+  };   
 
   return (
     <View style={styles.datePickerContainer}>
