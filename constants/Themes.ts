@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.secondaryColor,
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
     paddingHorizontal: 20,
+    paddingTop: 20,
   },
   basicFont: {
     color: COLORS.mainColor,
@@ -48,6 +49,10 @@ const styles = StyleSheet.create({
   introductionText: {
     alignItems: "center",
     justifyContent: "center",
+  },
+  homePageCard: {
+    height: 450,
+    objectFit: "contain",
   },
 });
 
