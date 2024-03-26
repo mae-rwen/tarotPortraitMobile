@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { styles } from "../../constants/Themes";
 import DatePicker from "../../components/datePicker";
 import BirthCard from "../../components/birthCard";
+import { TurboModuleRegistry } from "react-native";
 
 const index = () => {
   const [birthdate, setBirthdate] = useState<Date | undefined>(undefined);
@@ -22,7 +23,7 @@ const index = () => {
       return 0;
     }
     let num = birthdate
-      .toLocaleString("de-DE")
+      .toLocaleDateString("de-DE")
       .split("")
       .filter((val) => val !== ".")
       .reduce((acc, curr) => {
@@ -31,6 +32,7 @@ const index = () => {
     while (num > 22) {
       num -= 22;
     }
+    console.log(typeof num, num);
     return num;
   };
 
@@ -46,8 +48,12 @@ const index = () => {
         <DatePicker birthdate={birthdate} setBirthdate={setBirthdate} />
       </View>
       <View>
-        <TouchableOpacity onPress={() => {}}>
-          <Text>set birthcard?</Text>
+        <TouchableOpacity
+          onPress={() => {
+            setBirthCard(getBirthCard);
+          }}
+        >
+          <Text>Test</Text>
         </TouchableOpacity>
       </View>
       <View>

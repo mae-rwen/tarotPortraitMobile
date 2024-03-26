@@ -18,7 +18,6 @@ const DatePicker = ({ setBirthdate, birthdate }: DatePickerProps) => {
   const onDateChange = (event: any, selectedDate: Date | undefined) => {
     setShowDatePicker(false);
     setBirthdate(selectedDate);
-    console.log(selectedDate?.toLocaleString("de-DE"));
   };
 
   return (
