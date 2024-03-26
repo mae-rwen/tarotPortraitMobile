@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
   basicFont: {
     color: COLORS.mainColor,
     fontSize: FONTSIZE.mediumFont,
-    // textAlign: "center",
   },
   titleFont: {
     color: COLORS.mainColor,
@@ -53,6 +52,15 @@ const styles = StyleSheet.create({
   homePageCard: {
     height: 450,
     objectFit: "contain",
+  },
+  submitChangeBD: {
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 20,
+  },
+  submitChangeBDbtns: {
+    flexDirection: "row",
+    gap: 50,
   },
 });
 

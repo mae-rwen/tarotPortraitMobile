@@ -6,9 +6,10 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 interface DatePickerProps {
   setBirthdate: Dispatch<SetStateAction<Date | undefined>>;
   birthdate: Date | undefined;
+  title: string;
 }
 
-const DatePicker = ({ setBirthdate, birthdate }: DatePickerProps) => {
+const DatePicker = ({ setBirthdate, birthdate, title }: DatePickerProps) => {
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const showPicker = () => {
@@ -23,7 +24,7 @@ const DatePicker = ({ setBirthdate, birthdate }: DatePickerProps) => {
   return (
     <View>
       <TouchableOpacity onPress={showPicker}>
-        <Text style={styles.basicFont}>Set your birthdate</Text>
+        <Text style={styles.basicFont}>{title}</Text>
       </TouchableOpacity>
       {showDatePicker && (
         <DateTimePicker
