@@ -61,9 +61,8 @@ const index = () => {
           <Text style={styles.basicFont}>
             Your birthdate is: {day}.{month}.{year}
           </Text>
-
-          <View style={styles.submitChangeBDbtns}>
-            {!birthCard && (
+          {!birthCard && (
+            <View style={styles.submitChangeBDbtns}>
               <View>
                 <TouchableOpacity
                   onPress={() => {
@@ -73,15 +72,16 @@ const index = () => {
                   <Text style={styles.basicFont}>Submit</Text>
                 </TouchableOpacity>
               </View>
-            )}
-            <View>
-              <DatePicker
-                birthdate={birthdate}
-                setBirthdate={setBirthdate}
-                title={changeSubmit}
-              />
+
+              <View>
+                <DatePicker
+                  birthdate={birthdate}
+                  setBirthdate={setBirthdate}
+                  title={changeSubmit}
+                />
+              </View>
             </View>
-          </View>
+          )}
         </View>
       )}
       {birthCard && (
